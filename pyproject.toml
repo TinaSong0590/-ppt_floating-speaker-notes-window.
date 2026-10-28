@@ -1,0 +1,24 @@
+[project]
+name = "wps-notes-overlay"
+version = "0.1.0"
+description = "Mac floating speaker-notes overlay for WPS Presentation"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["python-pptx>=1.0.0"]
+
+[project.optional-dependencies]
+mac = [
+  "pyobjc-framework-Cocoa>=10.0",
+  "pyobjc-framework-Quartz>=10.0",
+  "pyobjc-framework-ApplicationServices>=10.0",
+]
+
+[project.scripts]
+wps-notes-overlay = "wps_notes_overlay.__main__:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
